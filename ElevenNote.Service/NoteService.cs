@@ -45,10 +45,27 @@ namespace ElevenNote.Service
                 entity.Title = model.Title;
                 entity.Content = model.Content;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.IsStarred = model.IsStarred;
 
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteNote(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Notes
+                        .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+
+                ctx.Notes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<NoteListItem> GetNotes()
         {
             using (var ctx = new ApplicationDbContext())
@@ -59,12 +76,13 @@ namespace ElevenNote.Service
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new NoteListItem
-                                {
-                                    NoteId = e.NoteId,
-                                    Title = e.Title,
-                                    CreatedUtc = e.CreatedUtc
-                                }
+                                    new NoteListItem
+                                    {
+                                        NoteId = e.NoteId,
+                                        Title = e.Title,
+                                        IsStarred = e.IsStarred,
+                                        CreatedUtc = e.CreatedUtc
+                                    }
                         );
                  return query.ToArray();
             }
