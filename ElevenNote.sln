@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote.Service", "Eleve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote.WebMVC", "ElevenNote.WebMVC\ElevenNote.WebMVC.csproj", "{EF99A937-D3B0-4E34-9DC0-110E4E18713C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote.WebAPI", "ElevenNote.WebAPI\ElevenNote.WebAPI.csproj", "{01248DF5-BBFE-4D99-958E-9EA73D8B03C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EF99A937-D3B0-4E34-9DC0-110E4E18713C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF99A937-D3B0-4E34-9DC0-110E4E18713C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF99A937-D3B0-4E34-9DC0-110E4E18713C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01248DF5-BBFE-4D99-958E-9EA73D8B03C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01248DF5-BBFE-4D99-958E-9EA73D8B03C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01248DF5-BBFE-4D99-958E-9EA73D8B03C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01248DF5-BBFE-4D99-958E-9EA73D8B03C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
